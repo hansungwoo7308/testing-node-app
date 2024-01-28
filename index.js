@@ -23,3 +23,10 @@ app.get("/api/some", (req, res) => {
 
 // running
 app.listen(PORT, () => console.log("[running on port 7000]".green, "\n"));
+
+// vercel.json
+// {
+//   "version": 2,
+//   "builds": [{ "src": "index.js", "use": "@vercel/node" }],
+//   "routes": [{ "src": "/api/(.*)", "dest": "/index.js" }]
+// }
