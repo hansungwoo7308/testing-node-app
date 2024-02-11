@@ -1,28 +1,41 @@
 // importing modules
 const express = require("express");
 const app = express();
+//
+const dotenv = require("dotenv");
 const path = require("path");
-const cors = require("cors");
-const PORT = 7000;
 const colors = require("colors");
+const PORT = process.env.PORT || 7000;
+//
+const connectDB = require("./config/connectDB");
+const cors = require("cors");
+const corsSettings = require("./config/corsSettings");
 
-// app.use(cors({ origin: "http://localhost:7000" })); // allowing cross origin
+// setting the environment
+dotenv.config();
 
-// static
+// connecting the database
+connectDB();
+
+// middlewares
+app.use(cors(corsSettings));
+app.use(express.json());
+
+// static routes
 app.use(express.static(path.join(__dirname, "../client/build")));
 app.use("/dashboard", (req, res) => {
   console.log("some".gray);
   res.status(200).send("<html>ssdfsdfkshdfl</html>");
 });
 
-// dynamic
-app.get("/api/some", (req, res) => {
-  console.log("some".gray);
-  res.status(200).json({ message: "some..." });
-});
+// dynamic routes
+app.use("/api/public_data", require("./routes/api/public_data"));
+// app.use("/api/test", (req, res) => {
+//   res.status(200).json({ somesome: "234234234" });
+// });
 
-// running
-app.listen(PORT, () => console.log("[running on port 7000]".green, "\n"));
+// running the server
+app.listen(PORT, () => console.log("[running on port 7000]".green, "\n\n\n"));
 
 // vercel.json
 // {
