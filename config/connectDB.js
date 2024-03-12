@@ -6,6 +6,7 @@ async function connectDB() {
     // console.log("\n\x1b[33mMongoDB is already connected");
     return;
   }
+
   try {
     await mongoose.connect(process.env.MONGODB_URI);
     // console.log("\n\x1b[33mMongoDB connected");

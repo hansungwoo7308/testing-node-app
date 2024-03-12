@@ -24,11 +24,11 @@ app.use(express.json()); // 클라이언트 요청 데이터를 자바스크립�
 
 // static routes
 app.use(express.static(path.join(__dirname, "../client/build")));
-app.use("/", (req, res) => {
+app.get("/", (req, res) => {
   console.log("home".gray);
   res.status(200).send("<html>home page</html>").end();
 });
-app.use("/dashboard", (req, res) => {
+app.get("/dashboard", (req, res) => {
   console.log("dashboard".gray);
   res.status(200).send("<html>dashboard page</html>").end();
 });
