@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
     //   .collection("commercial_analysis_service")
     //   .find()
     //   .toArray();
-    res.status(200).json({ documents });
+    res.status(200).json(documents);
   } catch (error) {
     res.status(500).json({ message: "연결에러..." });
   }
