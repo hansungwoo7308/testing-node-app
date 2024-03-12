@@ -23,7 +23,7 @@ app.use(express.json()); // 클라이언트 요청 데이터를 자바스크립�
 // app.use(express.urlencoded()) // 클라이언트 요청 중에서 폼데이터를 자바스크립트 형식으로 파싱한다.
 
 // static routes
-app.use(express.static(path.join(__dirname, "../client/build")));
+app.use(express.static(path.join(__dirname, "../../react-app/testing-app/build")));
 app.get("/", (req, res) => {
   console.log("home".gray);
   res.status(200).send("<html>home page</html>").end();
