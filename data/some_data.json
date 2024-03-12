@@ -1,0 +1,19 @@
+{
+  "_id": { "$oid": "65c84c1360a45f5f86af65f6" },
+  "adstrd_cd": "11110550",
+  "stdr_yyqu_cd": "20231",
+  "mcp_expndtr_totamt": { "$numberInt": "101703000" },
+  "fd_expndtr_totamt": { "$numberInt": "670142000" },
+  "plesr_expndtr_totamt": { "$numberInt": "2652000" },
+  "lvspl_expndtr_totamt": { "$numberInt": "12611000" },
+  "trnsport_expndtr_totamt": { "$numberInt": "109837000" },
+  "edc_expndtr_totamt": { "$numberInt": "78943000" },
+  "expndtr_totamt": { "$numberInt": "1385759000" },
+  "lsr_cltur_expndtr_totamt": { "$numberInt": "131748000" },
+  "income_sctn_cd": "07",
+  "etc_expndtr_totamt": { "$numberInt": "6197000" },
+  "clths_ftwr_expndtr_totamt": { "$numberInt": "39726000" },
+  "adstrd_cd_nm": "부암동",
+  "mt_avrg_income_amt": { "$numberInt": "3647449" },
+  "fdstffs_expndtr_totamt": { "$numberInt": "232200000" }
+}
