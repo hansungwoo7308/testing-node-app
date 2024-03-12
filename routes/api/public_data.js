@@ -1,3 +1,22 @@
+const express = require("express");
+const router = express.Router();
+const mongoose = require("mongoose");
+
+router.get("/", async (req, res) => {
+  try {
+    const documents = require("../../data/some_data.json");
+    // const documents = await mongoose.connection
+    //   .collection("commercial_analysis_service")
+    //   .find()
+    //   .toArray();
+    res.status(200).json({ documents });
+  } catch (error) {
+    res.status(500).json({ message: "연결에러..." });
+  }
+});
+
+module.exports = router;
+
 // const express = require("express");
 // const router = express.Router();
 
@@ -15,21 +34,3 @@
 // });
 
 // module.exports = router;
-
-const express = require("express");
-const router = express.Router();
-const mongoose = require("mongoose");
-
-router.get("/", async (req, res) => {
-  try {
-    const documents = await mongoose.connection
-      .collection("commercial_analysis_service")
-      .find()
-      .toArray();
-    res.status(200).json({ documents });
-  } catch (error) {
-    res.status(500).json({ message: "연결에러..." });
-  }
-});
-
-module.exports = router;
